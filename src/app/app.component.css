@@ -1,0 +1,11 @@
+h1 {
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+}
+
+.carousel-container {
+    height: 40vh;
+    margin: 0 auto;
+    width: 50vw;
+    
+}

@@ -1,13 +1,12 @@
-<div class="carousel-container">
-    <ol class="content">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    <li>Item 4</li>
+<div class="carousel">
+    <ol class="panes">
+        <li *ngFor="let item of items; let i = index">
+            <img src="{{item.source}}">
+        </li>
     </ol>
 
     <ol class="indicators">
-    <li>Item 1</li>
+    <li ng-click="setId(items.id)">Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
     <li>Item 4</li>

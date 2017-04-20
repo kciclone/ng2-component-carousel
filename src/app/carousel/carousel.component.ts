@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class CarouselComponent {
 
-  carouselItems = [
-    {id: 1, content: "Item 1"},
-    {id: 2, content: "Item 2"},
-    {id: 3, content: "Item 3"},
-    {id: 4, content: "Item 4"},
-    {id: 5, content: "Item 5"}
+  items = [
+    {source: "http://placehold.it/350x150/d19c8a/d19c8a"},
+    {source: "http://placehold.it/350x150/d1c887/d1c887"},
+    {source: "http://placehold.it/350x150/a6d18a/a6d18a"},
+    {source: "http://placehold.it/350x150/86d1b5/86d1b5"},
+    {source: "http://placehold.it/350x150/d186c2/d186c2"}
   ]
 }
