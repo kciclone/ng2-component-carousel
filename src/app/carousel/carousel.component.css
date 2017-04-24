@@ -2,9 +2,22 @@
     https://csswizardry.com/2011/10/fully-fluid-responsive-css-carousel/
 */
 
+button {
+    color: rgba(45, 45, 45, 0.5);
+    background-color: transparent;
+    border-color: transparent;
+}
+
 .carousel {
+    height: 100%;
     overflow: hidden;
+    position: relative;
+    text-align: center;
     width: 100%;
+}
+
+.carousel-container {
+    display: flex;
 }
 
 .carousel img {
@@ -14,6 +27,7 @@
 }
 
 .indicators {
+    display: inline-block;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -21,8 +35,37 @@
 
 .indicators > li {
     float: left;
-    padding: 1rem 0.5rem;
+    outline: none;
+    padding: 1rem 0.3rem;
     position: relative;
+}
+
+.indicators > li.active > button {
+ color: rgb(255, 45, 100);
+}
+
+.indicators button {
+    cursor: pointer;
+    outline: none;
+    padding: 0.2rem;
+}
+
+.navigation-arrow.left{
+    font-size: 2rem;
+    height: 85%; /* dirty fix, can't see why 100% doesn't work*/
+    left: 0;
+    outline: none;
+    position: absolute;
+    top: 0;
+}
+
+.navigation-arrow.right{
+    font-size: 2rem;
+    height: 85%; /* dirty fix*/
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .panes {

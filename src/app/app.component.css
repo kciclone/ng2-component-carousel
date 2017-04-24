@@ -3,8 +3,8 @@ h1 {
     text-align: center;
 }
 
-.carousel-container {
-    height: 40vh;
+.component-container {
+    height: 50vh;
     margin: 0 auto;
     width: 50vw;
     
