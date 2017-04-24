@@ -19,6 +19,12 @@
     padding: 0;
 }
 
+.indicators > li {
+    float: left;
+    padding: 1rem 0.5rem;
+    position: relative;
+}
+
 .panes {
     animation: carousel 30s infinite;
     list-style: none;
@@ -26,11 +32,12 @@
     overflow: hidden;
     padding: 0;
     position: relative;
-    width: 500%; /* Number of panes * 100% */
+
+    transition: left 0.7s;
+    transition-timing-function: ease-in-out;
 }
 
 .panes > li {
     float: left;
     position: relative;
-    width: 20%; /* 100 / number of panes */
 }

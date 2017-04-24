@@ -1,17 +1,15 @@
 <div class="carousel">
-    <ol class="panes">
-        <li *ngFor="let item of items; let i = index">
+    <ol class="panes" [ngStyle]="{'left': setPosition(), 'width': getPanesWidth()}">
+        <li *ngFor="let item of items" [ngStyle]="{'width': getLiWidth()}">
             <img src="{{item.source}}">
         </li>
     </ol>
 
     <ol class="indicators">
-    <li ng-click="setId(items.id)">Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    <li>Item 4</li>
+        <li *ngFor="let item of items" (click)="setItem(item)">
+            <span>*</span> 
+        </li>
     </ol>
-
     <button>< Previous</button>
     <button>Next ></button>
 </div>
