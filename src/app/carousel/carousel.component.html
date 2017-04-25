@@ -11,7 +11,7 @@
         </div>
         <div class="indicators-container">
             <ol class="indicators">
-                <li *ngFor="let item of items" (click)="setItem(item,items)">
+                <li *ngFor="let item of items ; let i = index" (click)="setItem(i)" [class.active]="i == selectedItem">
                     <button><i class="fa fa-circle" aria-hidden="true"></i></button> 
                 </li>
             </ol>

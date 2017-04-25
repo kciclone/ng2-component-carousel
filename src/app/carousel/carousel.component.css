@@ -50,7 +50,8 @@ button {
     padding: 0.2rem;
 }
 
-.navigation-arrow.left{
+.navigation-arrow.left {
+    cursor: pointer;
     font-size: 2rem;
     height: 85%; /* dirty fix, can't see why 100% doesn't work*/
     left: 0;
@@ -59,7 +60,8 @@ button {
     top: 0;
 }
 
-.navigation-arrow.right{
+.navigation-arrow.right {
+    cursor: pointer;
     font-size: 2rem;
     height: 85%; /* dirty fix*/
     outline: none;

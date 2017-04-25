@@ -15,33 +15,33 @@ export class CarouselComponent {
     {source: "http://placehold.it/350x150/d186c2/d186c2"}
   ]
 
-  public currentItemId = 0;
+  selectedItem = 0;
   
 
   public setPosition(){
     let positionValue = 1;
     let parsedPositionValue = "";
-    positionValue = positionValue * this.currentItemId*100;
+    positionValue = positionValue * this.selectedItem*100;
     parsedPositionValue = "-" + positionValue + "%";
     return parsedPositionValue;
   }
 
 
-  public setItem = (item,items) => {
-    if (this.currentItemId === items.indexOf(item)) return;
-    this.currentItemId = items.indexOf(item);
-    return this.currentItemId;
+  public setItem = (index) => {
+    if (this.selectedItem === index) return;
+    this.selectedItem = index;
+    return  this.selectedItem;
   }
   public next(){
-    if (this.currentItemId === this.items.length - 1) return;
-    this.currentItemId = this.currentItemId + 1;
-    return this.currentItemId;
+    if (this.selectedItem === this.items.length - 1) return;
+    this.selectedItem = this.selectedItem + 1;
+    return this.selectedItem;
   }
 
   public previous(){
-    if (this.currentItemId === 0) return;
-    this.currentItemId = this.currentItemId - 1;
-    return this.currentItemId;
+    if (this.selectedItem === 0) return;
+    this.selectedItem = this.selectedItem - 1;
+    return this.selectedItem;
   }
 
   public getPanesWidth() {
