@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { GetItemsService } from './services/getItems.service'
 
@@ -9,13 +9,19 @@ import { GetItemsService } from './services/getItems.service'
 
   providers: [GetItemsService] // this could be set on the app module, but is not necessary because it's only needed in the carousel?
 })
-export class CarouselComponent {
+export class CarouselComponent implements OnInit {
 
   items:any[];
   selectedItem = 0;
 
   constructor(private getItemsService: GetItemsService) { // shorthand
-    this.items = this.getItemsService.getItems() // not a good idea to put potentially long running tasks in your constructor
+    // this.items = this.getItemsService.getItems() // not a good idea to put potentially long running tasks in your constructor
+    // although the constructor is empty it's still needed to inject the service 
+  }
+
+  // called on demand by Angular
+  ngOnInit() {
+    this.items = this.getItemsService.getItems()
   }
 
   public setPosition(){
