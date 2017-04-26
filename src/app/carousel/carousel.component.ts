@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
 
+import { GetItemsService } from './services/getItems.service'
+
 @Component({
   selector: 'carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.css'],
+
+  providers: [GetItemsService] // this could be set on the app module, but is not necessary because it's only needed in the carousel?
 })
 export class CarouselComponent {
 
-  items = [
-    {source: "http://placehold.it/350x150/d19c8a/d19c8a"},
-    {source: "http://placehold.it/350x150/d1c887/d1c887"},
-    {source: "http://placehold.it/350x150/a6d18a/a6d18a"},
-    {source: "http://placehold.it/350x150/86d1b5/86d1b5"},
-    {source: "http://placehold.it/350x150/d186c2/d186c2"}
-  ]
-
+  items:any[];
   selectedItem = 0;
-  
+
+  constructor(private getItemsService: GetItemsService) { // shorthand
+    this.items = this.getItemsService.getItems() // not a good idea to put potentially long running tasks in your constructor
+  }
 
   public setPosition(){
     let positionValue = 1;
