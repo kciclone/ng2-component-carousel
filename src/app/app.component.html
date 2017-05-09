@@ -2,6 +2,6 @@
   {{title}}
 </h1>
 <div class="component-container">
-  <carousel></carousel>
+  <carousel [items]="items" (move)="moved($event)"></carousel>
 </div>
 
