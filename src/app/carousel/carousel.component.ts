@@ -9,6 +9,7 @@ import {
   OnChanges,
   SimpleChanges
 } from '@angular/core';
+import { CarouselItem } from './carousel.types';
 
 @Component({
   selector: 'carousel',
@@ -17,13 +18,10 @@ import {
 })
 export class CarouselComponent {
 
-  items = [
-    {source: "http://placehold.it/350x150/d19c8a/d19c8a"},
-    {source: "http://placehold.it/350x150/d1c887/d1c887"},
-    {source: "http://placehold.it/350x150/a6d18a/a6d18a"},
-    {source: "http://placehold.it/350x150/86d1b5/86d1b5"},
-    {source: "http://placehold.it/350x150/d186c2/d186c2"}
-  ]
+  // see https://angular.io/docs/ts/latest/cookbook/component-communication.html
+  @Input() items: CarouselItem[] = []; // expect an array of CarouselItems from the parent component
+  @Output() move = new EventEmitter(); // expose an event handler to the parent
+
   // see first 2 answers (docs are missing) http://stackoverflow.com/questions/37965647/hostbinding-and-hostlistener-what-do-they-do-and-what-are-they-for
   @HostBinding('class.carousel-container') carouselContainerClass = true; // set a class on the host element (carousel)
 
