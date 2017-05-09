@@ -1,4 +1,14 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  OnInit,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 
 @Component({
   selector: 'carousel',
@@ -14,6 +24,8 @@ export class CarouselComponent {
     {source: "http://placehold.it/350x150/86d1b5/86d1b5"},
     {source: "http://placehold.it/350x150/d186c2/d186c2"}
   ]
+  // see first 2 answers (docs are missing) http://stackoverflow.com/questions/37965647/hostbinding-and-hostlistener-what-do-they-do-and-what-are-they-for
+  @HostBinding('class.carousel-container') carouselContainerClass = true; // set a class on the host element (carousel)
 
   selectedItem = 0;
   

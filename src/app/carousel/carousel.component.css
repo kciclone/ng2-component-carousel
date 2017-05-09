@@ -16,7 +16,8 @@ button {
     width: 100%;
 }
 
-.carousel-container {
+/* styling for host element */
+:host {
     display: flex;
 }
 
