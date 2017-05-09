@@ -14,7 +14,8 @@ import { CarouselItem } from './carousel.types';
 @Component({
   selector: 'carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush // only re-render component if inputs have changed, see https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
 })
 export class CarouselComponent {
 
